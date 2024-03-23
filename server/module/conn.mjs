@@ -1,6 +1,8 @@
 import { MongoClient } from 'mongodb';
+import '/Users/macuser/Documents/github/capstone/server/.env';
 
-const url = 'mongodb+srv://henokdebesay1:henokdebesay1@cluster0.jme2bid.mongodb.net/';
+
+const url = MONGO_URL;
 const dbName = 'Football_Leagues';
 const client = new MongoClient(url);
 

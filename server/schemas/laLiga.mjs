@@ -5,16 +5,41 @@ const laLigaSchema = new mongoose.Schema({
   founded: Number,
   stadium: String,
   city: String
-}, { collection: 'seriaTeams' });
+}, { collection: 'laLigaTeams' });
 
 const laLigaModel = mongoose.model('laLigaModel', laLigaSchema);
 
 const newTeam = new laLigaModel({
-    "name": "Juventus",
-    "founded": 1897,
-    "stadium": "Allianz Stadium",
-    "city": "Turin, Italy"
+
+      name: {
+        type: String,
+        required: true,
+      },
+      founded: {
+        type: Number,
+        min: 0,
+        required: true,
+      },
+      stadium: {
+        type: String,
+        required: true,
+      },
+      city: {
+        type: String,
+        required: true,
+      },
+      league: {
+        type: String,
+        required: true,
+      },
+      nickname: {
+        type: String,
+        required: true,
+      },
+
 });
+
+
 
 laLigaModel.createCollection();
 
