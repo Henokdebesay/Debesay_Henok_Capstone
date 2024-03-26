@@ -1,14 +1,24 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
-import Home from './Pages/Home';
+import EnglandMap from './Pages/EnglandMap';
+import SpainMap from './Pages/SpainMap';
+import ItalyMap from './Pages/ItalyMap';
+import Navbar from './Components/Navbar';
 
 function App() {
   return (
-    <> 
-        <Home />
-    </>
-     
-
+    <div>
+    <Router>
+      <Routes >
+        <Route path="/" element={<Navbar />} />
+        <Route path="/england" element={<EnglandMap />} />
+        <Route path="/spain" element={<SpainMap />} />
+        <Route path="/italy" element={<ItalyMap />} />
+      </Routes>
+    </Router>    
+    </div>
+    
   );
 }
 
-export default App
+export default App;

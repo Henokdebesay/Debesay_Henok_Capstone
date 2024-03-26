@@ -1,7 +1,9 @@
 
 function EnglandMap() {
   return (
-    <div>EnglandMap</div>
+    <div>
+        <h1>EnglandMap</h1>
+    </div>
   )
 }
 
