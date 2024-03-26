@@ -1,14 +1,12 @@
 // import React from 'react'
 
-// Home.js
-// import Navbar from './Navbar';
+import Navbar from "client/src/components/Navbar";
 
 function Home() {
   return (
     <div>
-      {/* <Navbar /> */}
+      <Navbar /> 
       <h1>Welcome to Football Map</h1>
-      {/* Add links to navigate to England, Spain, Italy maps */}
     </div>
   );
 }
