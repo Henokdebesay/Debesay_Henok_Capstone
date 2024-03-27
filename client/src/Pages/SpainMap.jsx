@@ -19,7 +19,6 @@ function SpainMap() {
         throw new Error('Failed to fetch data');
       }
       const data = await response.json();
-      console.log(data);
       setTeams(data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -54,13 +53,13 @@ function SpainMap() {
                                 'type': 'Feature',
                                 'geometry': {
                                     'type': 'Point',
-                                    'coordinates': [ -3.7038, 40.4168]
+                                    'coordinates': [ -3.7038, 40.4168],
                                 }
                             }
                         ]
                     }
                 });
-
+                
                
                 map.addLayer({
                     'id': 'points',

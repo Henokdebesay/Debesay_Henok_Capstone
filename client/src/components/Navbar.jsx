@@ -19,7 +19,7 @@ function Navbar() {
        <li><Link to="/spain">Spain</Link></li>
        <li><Link to="/italy">Italy</Link></li>
      </ul>
-     <h1 className='welcome'>Explore your teams journey, stay updated with the current season, and delve into geography – all in one place.</h1>
+     <h1 className='welcome'>Explore your teams journey, stay updated <br/>with the current season, and delve into geography – all in one place.</h1>
    </nav>
  );
 }

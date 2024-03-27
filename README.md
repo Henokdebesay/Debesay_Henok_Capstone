@@ -25,7 +25,7 @@ Upon launching the app, you will see a map of England, Spain, Italy with soccer 
 
 To modify team data, update the premiere endpoint data in the server accordingly, and the app will reflect the changes upon reloading.
 
-## Helpful video to get you started with Mapboc
+## Helpful video to get you started with Mapbox
 Youtube video - https://www.youtube.com/watch?v=ZxxZ3kpk5tU
 
 Links Client 
