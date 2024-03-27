@@ -25,6 +25,10 @@ Upon launching the app, you will see a map of England, Spain, Italy with soccer 
 
 To modify team data, update the premiere endpoint data in the server accordingly, and the app will reflect the changes upon reloading.
 
+## Helpful video to get you started with Mapboc
+Youtube video - https://www.youtube.com/watch?v=ZxxZ3kpk5tU
+
+Links Client 
 Contributors
 Henok D - 
 License

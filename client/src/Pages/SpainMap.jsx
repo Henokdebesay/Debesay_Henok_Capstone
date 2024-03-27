@@ -14,7 +14,7 @@ function SpainMap() {
 
   const fetchTeams = async () => {
     try {
-      const response = await fetch('http://localhost:3000/laliga');
+      const response = await fetch('http://localhost:3000/premiere');
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }
@@ -34,14 +34,48 @@ function SpainMap() {
       ],
       zoom: 5.5
     });
-
+  
+   
     map.on('load', () => {
-      map.loadImage('https://docs.mapbox.com/mapbox-gl-js/assets/cat.png', (error, image) => {
-        if (error) throw error;
-        map.addImage('cat', image);
+        map.loadImage(
+            '/soccer.png',
+            (error, image) => {
+                if (error) throw error;
+
+                map.addImage('cat', image);
+
+               
+                map.addSource('point', {
+                    'type': 'geojson',
+                    'data': {
+                        'type': 'FeatureCollection',
+                        'features': [
+                            {
+                                'type': 'Feature',
+                                'geometry': {
+                                    'type': 'Point',
+                                    'coordinates': [ -3.7038, 40.4168]
+                                }
+                            }
+                        ]
+                    }
+                });
+
+               
+                map.addLayer({
+                    'id': 'points',
+                    'type': 'symbol',
+                    'source': 'point', 
+                    'layout': {
+                        'icon-image': 'cat', 
+                        'icon-size': 0.05
+                    }
+                });
+
         
         teams.forEach(team => {
           const [longitude, latitude] = team.city;
+          console.log('Creating popup for:', team.name);
           const popupContent = `
             <div>
               <h3>${team.name}</h3>
@@ -51,6 +85,7 @@ function SpainMap() {
               <p><strong>League:</strong> ${team.league}</p>
             </div>
           `;
+          console.log('Popup content:', popupContent);
   
           new mapboxgl.Marker({ 
             element: createCustomMarkerElement('soccer') 
@@ -61,9 +96,10 @@ function SpainMap() {
         });
       });
     });
-
+  
     return () => map.remove();
   }, [teams]);
+  
 
   const createCustomMarkerElement = (markerId) => {
     const markerElement = document.createElement('div');
@@ -71,7 +107,7 @@ function SpainMap() {
     markerElement.style.width = '30px';
     markerElement.style.height = '30px';
     markerElement.style.backgroundImage = `url(${markerId}.jpeg)`;
-    markerElement.style.cursor = 'pointer';
+    markerElement.style.cursor = 'pointer'; 
     return markerElement;
   };
 
@@ -79,3 +115,7 @@ function SpainMap() {
 }
 
 export default SpainMap;
+
+
+
+

@@ -36,16 +36,14 @@ function EnglandMap() {
   
    
     map.on('load', () => {
-        // Load an image from an external URL.
         map.loadImage(
             '/soccer.png',
             (error, image) => {
                 if (error) throw error;
 
-                // Add the image to the map style.
                 map.addImage('cat', image);
 
-                // Add a data source containing one point feature.
+               
                 map.addSource('point', {
                     'type': 'geojson',
                     'data': {
@@ -62,14 +60,14 @@ function EnglandMap() {
                     }
                 });
 
-                // Add a layer to use the image to represent the data.
+               
                 map.addLayer({
                     'id': 'points',
                     'type': 'symbol',
-                    'source': 'point', // reference the data source
+                    'source': 'point', 
                     'layout': {
-                        'icon-image': 'cat', // reference the image
-                        'icon-size': 0.25
+                        'icon-image': 'cat', 
+                        'icon-size': 0.05
                     }
                 });
 
@@ -108,7 +106,7 @@ function EnglandMap() {
     markerElement.style.width = '30px';
     markerElement.style.height = '30px';
     markerElement.style.backgroundImage = `url(${markerId}.jpeg)`;
-    markerElement.style.cursor = 'pointer'; // Set cursor to pointer
+    markerElement.style.cursor = 'pointer'; 
     return markerElement;
   };
 

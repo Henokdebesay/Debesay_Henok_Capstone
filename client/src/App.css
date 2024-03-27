@@ -3,7 +3,7 @@ body, html {
   width: 100%;
   margin: 0;
   padding: 0; 
-  background-color: red;
+  background-color: lightcoral;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,8 +30,12 @@ body, html {
  
  }
  
- 
+ .welcome{
+  color: white;
+  text-align: center;
+ }
  .links > li {
   padding-right: 100px;
   font-weight: bold;
+  color: aliceblue;
  }

@@ -34,14 +34,49 @@ function ItalyMap() {
       ],
       zoom: 5.5
     });
-
+  
+   
     map.on('load', () => {
-      map.loadImage('/soccer.jpeg', (error, image) => {
-        if (error) throw error;
-        map.addImage('/soccer', image);
+        map.loadImage(
+            '/soccer.png',
+            (error, image) => {
+                if (error) throw error;
+
+                map.addImage('cat', image);
+
+               
+                map.addSource('point', {
+                    'type': 'geojson',
+                    'data': {
+                        'type': 'FeatureCollection',
+                        'features': [
+                            {
+                                'type': 'Feature',
+                                'geometry': {
+                                    'type': 'Point',
+                                    'coordinates': [12.4964,41.9028
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                });
+
+               
+                map.addLayer({
+                    'id': 'points',
+                    'type': 'symbol',
+                    'source': 'point', 
+                    'layout': {
+                        'icon-image': 'cat', 
+                        'icon-size': 0.05
+                    }
+                });
+
         
         teams.forEach(team => {
           const [longitude, latitude] = team.city;
+          console.log('Creating popup for:', team.name);
           const popupContent = `
             <div>
               <h3>${team.name}</h3>
@@ -51,6 +86,7 @@ function ItalyMap() {
               <p><strong>League:</strong> ${team.league}</p>
             </div>
           `;
+          console.log('Popup content:', popupContent);
   
           new mapboxgl.Marker({ 
             element: createCustomMarkerElement('soccer') 
@@ -61,9 +97,10 @@ function ItalyMap() {
         });
       });
     });
-
+  
     return () => map.remove();
   }, [teams]);
+  
 
   const createCustomMarkerElement = (markerId) => {
     const markerElement = document.createElement('div');
@@ -71,7 +108,7 @@ function ItalyMap() {
     markerElement.style.width = '30px';
     markerElement.style.height = '30px';
     markerElement.style.backgroundImage = `url(${markerId}.jpeg)`;
-    markerElement.style.cursor = 'pointer'; // Set cursor to pointer
+    markerElement.style.cursor = 'pointer'; 
     return markerElement;
   };
 
@@ -79,3 +116,8 @@ function ItalyMap() {
 }
 
 export default ItalyMap;
+
+
+
+
+
