@@ -1,4 +1,3 @@
-
 function SpainMap() {
   return (
     <div>SpainMap</div>
