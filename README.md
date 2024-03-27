@@ -18,7 +18,8 @@ Dependencies
 
 ## Tools Used
 React: JavaScript library for building user interfaces.
-Mapbox GL JS: JavaScript library for interactive, customizable maps.
+
+## Mapbox GL JS: JavaScript library for interactive, customizable maps.
 Axios: Promise-based HTTP client for making requests to the server.
 Usage
 Upon launching the app, you will see a map of England, Spain, Italy with soccer team icons placed at their respective locations. Clicking on a team icon will open a popup displaying information about the team.
