@@ -1,8 +1,29 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Soccer Map App
+This is a soccer map app where users can find information about their favorite teams and modify data to fit the current league teams. The app utilizes Mapbox for displaying the map and allows users to interact with the map to view details about different soccer teams.
 
-Currently, two official plugins are available:
+Features
+Displays a map of England with soccer team icons placed at their respective locations.
+Users can click on a team icon to view information about the team, including its name, founding year, stadium, nickname, and league.
+Users can modify the data to update information about teams, such as their stadium or nickname.
+Getting Started
+To run the app locally, follow these steps:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Clone this repository to your local machine.
+Navigate to the project directory in your terminal.
+Install dependencies by running npm install.
+Start the development server by running npm start.
+Open your browser and visit http://localhost:3000 to view the app.
+Dependencies
+React: JavaScript library for building user interfaces.
+Mapbox GL JS: JavaScript library for interactive, customizable maps.
+Axios: Promise-based HTTP client for making requests to the server.
+Usage
+Upon launching the app, you will see a map of England with soccer team icons placed at their respective locations. Clicking on a team icon will open a popup displaying information about the team.
+
+To modify team data, update the premiere endpoint data in the server accordingly, and the app will reflect the changes upon reloading.
+
+Contributors
+[Your Name] - [Your GitHub Profile]
+License
+This project is licensed under the MIT License.
