@@ -14,7 +14,7 @@ function SpainMap() {
 
   const fetchTeams = async () => {
     try {
-      const response = await fetch('http://localhost:3000/premiere');
+      const response = await fetch('http://localhost:3000/laliga');
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }
