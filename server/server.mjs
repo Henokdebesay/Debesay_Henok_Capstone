@@ -5,12 +5,14 @@ import mongoose from 'mongoose'
 import premiereLeague from './routes/premiereRoutes.mjs';
 import laLiga from './routes/laligaRoutes.mjs';
 import seriaA from './routes/seriaRoutes.mjs';
-
+import cors from 'cors'
 
 
 const app = express();
 const PORT = process.env.PORT || 3000;   
 const MONGO_URL = process.env.MONGO_URL
+
+app.use(cors());
 
 
 const requestLogger = (req, res, next) => {
@@ -30,7 +32,7 @@ mongoose.connect(MONGO_URL)
     });
 
 app.get('/', (req, res) => {
-    res.send("HELLO");
+    res.send("HELLO WORLD");
 });
 
 app.use("/premiere", premiereLeague);
