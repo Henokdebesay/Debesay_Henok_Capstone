@@ -38,7 +38,7 @@ function EnglandMap() {
     map.on('load', () => {
         // Load an image from an external URL.
         map.loadImage(
-            'https://docs.mapbox.com/mapbox-gl-js/assets/cat.png',
+            '/soccer.png',
             (error, image) => {
                 if (error) throw error;
 
