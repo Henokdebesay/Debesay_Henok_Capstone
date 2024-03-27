@@ -24,12 +24,11 @@ Axios: Promise-based HTTP client for making requests to the server.
 Usage
 Upon launching the app, you will see a map of England, Spain, Italy with soccer team icons placed at their respective locations. Clicking on a team icon will open a popup displaying information about the team.
 
-To modify team data, update the premiere endpoint data in the server accordingly, and the app will reflect the changes upon reloading.
+You can update it by filling out the form on top and add or remove team from the map.
 
 ## Helpful video to get you started with Mapbox
 Youtube video - https://www.youtube.com/watch?v=ZxxZ3kpk5tU
 
-Links Client 
 Contributors
 Henok D - 
 License
