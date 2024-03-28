@@ -25,12 +25,12 @@ function EnglandMap() {
   };
 
   useEffect(() => {
-    if (teams.length === 0) return; // Return if teams data is not available yet
+    if (teams.length === 0) return; 
 
     const map = new mapboxgl.Map({
       container: 'map-container',
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: [teams[0].city[1], teams[0].city[0]], // Use the first team's city for initial center
+      center: [teams[0].city[1], teams[0].city[0]],
       zoom: 6
     });
 
@@ -63,8 +63,7 @@ function EnglandMap() {
     });
 
     return () => map.remove();
-  }, [teams]); // Include teams in the dependencies array
-
+  }, [teams]); 
   return <div id="map-container" style={{ width: '1000px', height: '820px' }} />;
 }
 
